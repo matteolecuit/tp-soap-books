@@ -1,0 +1,84 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://matteo.lecuit/ws/author"
+           targetNamespace="http://matteo.lecuit/ws/author" elementFormDefault="qualified">
+
+    <xs:complexType name="author">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string" />
+            <xs:element name="firstname" type="xs:string" />
+            <xs:element name="lastname" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:element name="getAuthorByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getAuthorByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="author" type="tns:author" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllAuthorsRequest">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="getAllAuthorsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="author" type="tns:author" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="addAuthorRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:string" />
+                <xs:element name="firstname" type="xs:string" />
+                <xs:element name="lastname" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="addAuthorResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="author" type="tns:author"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="updateAuthorRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:string" />
+                <xs:element name="firstname" type="xs:string" />
+                <xs:element name="lastname" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="updateAuthorResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="author" type="tns:author"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="deleteAuthorRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="deleteAuthorResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="author" type="tns:author"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

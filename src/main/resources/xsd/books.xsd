@@ -1,0 +1,30 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://matteo.lecuit/ws/book"
+           targetNamespace="http://matteo.lecuit/ws/book" elementFormDefault="qualified">
+
+    <xs:element name="getBook">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="BookDetailsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Book" type="tns:Book"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="Book">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="ISBN" type="xs:string"/>
+            <xs:element name="publishingDate" type="xs:dateTime"/>
+            <xs:element name="authorId" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
